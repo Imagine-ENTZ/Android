@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ImagineCup</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_analyzing">Analyzing</string>
+    <string name="menu_mission">Mission</string>
 </resources>

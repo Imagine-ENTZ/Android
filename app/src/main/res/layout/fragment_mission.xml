@@ -23,7 +23,7 @@
             android:textFontWeight="@integer/material_motion_duration_medium_2"
             android:textSize="15sp"
             android:text="AI-recommended Mission"
-            android:fontFamily="@font/Poppins_Medium"/>
+            android:fontFamily="@font/poppins_medium"/>
         <ImageButton
             android:src="@drawable/icon_refresh"
             android:background="@drawable/refresh_button_design"
@@ -48,7 +48,7 @@
                 android:layout_marginLeft="50dp"
                 android:text="10Minutes"
                 android:textColor="#7A9CFD"
-                android:fontFamily="@font/Poppins_Medium"/>
+                android:fontFamily="@font/poppins_medium"/>
 
             <TextView
                 android:id="@+id/mission_name_1"
@@ -57,7 +57,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:text="Meditate"
-                android:fontFamily="@font/Poppins_Medium"/>
+                android:fontFamily="@font/poppins_medium"/>
         </FrameLayout>
         <FrameLayout
             android:id="@+id/mission_box_2"
@@ -75,7 +75,7 @@
                 android:layout_marginLeft="50dp"
                 android:text="10Minutes"
                 android:textColor="#7A9CFD"
-                android:fontFamily="@font/Poppins_Medium"/>
+                android:fontFamily="@font/poppins_medium"/>
 
             <TextView
                 android:id="@+id/mission_name_2"
@@ -84,7 +84,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:text="Running"
-                android:fontFamily="@font/Poppins_Medium"/>
+                android:fontFamily="@font/poppins_medium"/>
         </FrameLayout>
 
     </FrameLayout>
@@ -146,5 +146,62 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:text="Latest Mission"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"/>
+
+        <com.transferwise.sequencelayout.SequenceLayout
+            android:layout_width="362dp"
+            android:layout_height="378dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/mission_corner_layout"
+            android:padding="10dp"
+            app:progressForegroundColor="@color/signature">
+
+            <com.transferwise.sequencelayout.SequenceStep
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:anchor="Today"
+                app:subtitle="Stroll 10minutes"
+                app:title="SUCCESS" />
+
+            <com.transferwise.sequencelayout.SequenceStep
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:subtitle="Take a nap 30minutes"
+                app:title="SUCCESS" />
+
+            <com.transferwise.sequencelayout.SequenceStep
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:anchor="20 Dec"
+                app:subtitle="Meditate 10minutes"
+                app:title="SUCCESS" />
+
+            <com.transferwise.sequencelayout.SequenceStep
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:subtitle="Meditate 15minutes"
+                app:title="FAIL" />
+
+            <com.transferwise.sequencelayout.SequenceStep
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:anchor="21 Dec"
+                app:subtitle="Run 10minutes"
+                app:title="SUCCESS" />
+        </com.transferwise.sequencelayout.SequenceLayout>
+
+    </FrameLayout>
 
 </LinearLayout>

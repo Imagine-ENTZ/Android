@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/button_corner_round.xml" value="0.248" />
+        <entry key="app/src/main/res/drawable/circle_button.xml" value="0.1715" />
         <entry key="app/src/main/res/drawable/corner_round.xml" value="0.248" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.248" />
         <entry key="app/src/main/res/drawable/icon_analyzing.xml" value="0.259" />

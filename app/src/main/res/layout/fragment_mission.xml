@@ -23,7 +23,7 @@
             android:textFontWeight="@integer/material_motion_duration_medium_2"
             android:textSize="15sp"
             android:text="AI-recommended Mission"
-            android:fontFamily="@font/poppins_medium"/>
+            android:fontFamily="@font/urbanist_medium"/>
         <ImageButton
             android:src="@drawable/icon_refresh"
             android:background="@drawable/refresh_button_design"
@@ -48,7 +48,7 @@
                 android:layout_marginLeft="50dp"
                 android:text="10Minutes"
                 android:textColor="#7A9CFD"
-                android:fontFamily="@font/poppins_medium"/>
+                android:fontFamily="@font/urbanist_medium"/>
 
             <TextView
                 android:id="@+id/mission_name_1"
@@ -57,7 +57,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:text="Meditate"
-                android:fontFamily="@font/poppins_medium"/>
+                android:fontFamily="@font/urbanist_medium"/>
         </FrameLayout>
         <FrameLayout
             android:id="@+id/mission_box_2"
@@ -75,7 +75,7 @@
                 android:layout_marginLeft="50dp"
                 android:text="10Minutes"
                 android:textColor="#7A9CFD"
-                android:fontFamily="@font/poppins_medium"/>
+                android:fontFamily="@font/urbanist_medium"/>
 
             <TextView
                 android:id="@+id/mission_name_2"
@@ -84,7 +84,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:text="Running"
-                android:fontFamily="@font/poppins_medium"/>
+                android:fontFamily="@font/urbanist_medium"/>
         </FrameLayout>
 
     </FrameLayout>
@@ -157,7 +157,7 @@
             android:text="Latest Mission"
             android:textSize="16sp"
             android:textColor="@color/black"
-            android:fontFamily="@font/poppins_medium"/>
+            android:fontFamily="@font/urbanist_medium"/>
 
         <com.transferwise.sequencelayout.SequenceLayout
             android:layout_width="362dp"

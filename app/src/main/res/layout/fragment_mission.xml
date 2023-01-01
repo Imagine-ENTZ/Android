@@ -9,199 +9,215 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <FrameLayout
-        android:layout_width="364dp"
-        android:layout_height="160dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30sp"
-        android:background="@drawable/corner_round">
-        <TextView
-            android:layout_marginTop="18dp"
-            android:layout_marginLeft="35dp"
-            android:layout_width="200dp"
-            android:layout_height="20dp"
-            android:textFontWeight="@integer/material_motion_duration_medium_2"
-            android:textSize="15sp"
-            android:text="AI-recommended Mission"
-            android:fontFamily="@font/poppins_medium"/>
-        <ImageButton
-            android:src="@drawable/icon_refresh"
-            android:background="@drawable/refresh_button_design"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="310dp"
-            android:layout_marginTop="15dp"  />
-
-        <FrameLayout
-            android:id="@+id/mission_box_1"
-            android:background="@drawable/button_corner_round"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="140dp"
-            android:layout_height="60dp" >
-
-            <TextView
-                android:id="@+id/mission_time_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="50dp"
-                android:text="10Minutes"
-                android:textColor="#7A9CFD"
-                android:fontFamily="@font/poppins_medium"/>
-
-            <TextView
-                android:id="@+id/mission_name_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:text="Meditate"
-                android:fontFamily="@font/poppins_medium"/>
-        </FrameLayout>
-        <FrameLayout
-            android:id="@+id/mission_box_2"
-            android:background="@drawable/button_corner_round"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="194dp"
-            android:layout_width="140dp"
-            android:layout_height="60dp" >
-
-            <TextView
-                android:id="@+id/mission_time_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="50dp"
-                android:text="10Minutes"
-                android:textColor="#7A9CFD"
-                android:fontFamily="@font/urbanist_medium"/>
-
-            <TextView
-                android:id="@+id/mission_name_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"
-                android:text="Running"
-                android:fontFamily="@font/poppins_medium"/>
-        </FrameLayout>
-
-    </FrameLayout>
-
-    <HorizontalScrollView
-        android:layout_marginVertical="5dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="89dp" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:orientation="vertical" >
 
-            <Button
-                android:id="@+id/mission_button_1"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/circle_button"
-                android:layout_marginVertical="14.5dp"
-                android:layout_marginHorizontal="10dp"
-                android:text="B1" />
+            <FrameLayout
+                android:layout_width="364dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30sp"
+                android:background="@drawable/corner_round">
 
-            <Button
-                android:id="@+id/mission_button_2"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/circle_button"
-                android:layout_marginVertical="14.5dp"
-                android:layout_marginHorizontal="10dp"
-                android:text="B2" />
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="18dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="AI-recommended Mission"
+                    android:textFontWeight="@integer/material_motion_duration_medium_2"
+                    android:textSize="15sp" />
 
-            <Button
-                android:id="@+id/mission_button_3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/circle_button"
-                android:layout_marginVertical="14.5dp"
-                android:layout_marginHorizontal="10dp"
-                android:text="B3" />
+                <ImageButton
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/refresh_button_design"
+                    android:src="@drawable/icon_refresh" />
 
-            <Button
-                android:id="@+id/mission_button_4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/circle_button"
-                android:layout_marginVertical="14.5dp"
-                android:layout_marginHorizontal="10dp"
-                android:text="B4" />
+                <FrameLayout
+                    android:id="@+id/mission_box_1"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/button_corner_round">
 
-            <Button
-                android:id="@+id/mission_button_5"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/circle_button"
-                android:layout_marginVertical="14.5dp"
-                android:layout_marginHorizontal="10dp"
-                android:text="B5" />
+                    <TextView
+                        android:id="@+id/mission_time_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="10Minutes"
+                        android:textColor="#7A9CFD" />
+
+                    <TextView
+                        android:id="@+id/mission_name_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Meditate" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/mission_box_2"
+                    android:layout_width="140dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="194dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/button_corner_round">
+
+                    <TextView
+                        android:id="@+id/mission_time_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/urbanist_medium"
+                        android:text="10Minutes"
+                        android:textColor="#7A9CFD" />
+
+                    <TextView
+                        android:id="@+id/mission_name_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Running" />
+                </FrameLayout>
+
+            </FrameLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="89dp"
+                android:layout_marginVertical="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <Button
+                        android:id="@+id/mission_button_1"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="14.5dp"
+                        android:background="@drawable/circle_button"
+                        android:text="B1" />
+
+                    <Button
+                        android:id="@+id/mission_button_2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="14.5dp"
+                        android:background="@drawable/circle_button"
+                        android:text="B2" />
+
+                    <Button
+                        android:id="@+id/mission_button_3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="14.5dp"
+                        android:background="@drawable/circle_button"
+                        android:text="B3" />
+
+                    <Button
+                        android:id="@+id/mission_button_4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="14.5dp"
+                        android:background="@drawable/circle_button"
+                        android:text="B4" />
+
+                    <Button
+                        android:id="@+id/mission_button_5"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="14.5dp"
+                        android:background="@drawable/circle_button"
+                        android:text="B5" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Latest Mission"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <com.transferwise.sequencelayout.SequenceLayout
+                    android:layout_width="362dp"
+                    android:layout_height="378dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:layout_marginTop="42dp"
+                    android:background="@drawable/mission_corner_layout"
+                    android:padding="10dp"
+                    app:progressForegroundColor="@color/signature">
+
+                    <com.transferwise.sequencelayout.SequenceStep
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:anchor="Today"
+                        app:subtitle="Stroll 10minutes"
+                        app:title="SUCCESS" />
+
+                    <com.transferwise.sequencelayout.SequenceStep
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:subtitle="Take a nap 30minutes"
+                        app:title="SUCCESS" />
+
+                    <com.transferwise.sequencelayout.SequenceStep
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:anchor="20 Dec"
+                        app:subtitle="Meditate 10minutes"
+                        app:title="SUCCESS" />
+
+                    <com.transferwise.sequencelayout.SequenceStep
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:subtitle="Meditate 15minutes"
+                        app:title="FAIL" />
+
+                    <com.transferwise.sequencelayout.SequenceStep
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:anchor="21 Dec"
+                        app:subtitle="Run 10minutes"
+                        app:title="SUCCESS" />
+                </com.transferwise.sequencelayout.SequenceLayout>
+
+            </FrameLayout>
+
         </LinearLayout>
-
-    </HorizontalScrollView>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="30dp"
-            android:text="Latest Mission"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/poppins_medium"/>
-
-        <com.transferwise.sequencelayout.SequenceLayout
-            android:layout_width="362dp"
-            android:layout_height="378dp"
-            android:layout_marginHorizontal="25dp"
-            android:layout_marginTop="42dp"
-            android:background="@drawable/mission_corner_layout"
-            android:padding="10dp"
-            app:progressForegroundColor="@color/signature">
-
-            <com.transferwise.sequencelayout.SequenceStep
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:anchor="Today"
-                app:subtitle="Stroll 10minutes"
-                app:title="SUCCESS" />
-
-            <com.transferwise.sequencelayout.SequenceStep
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:subtitle="Take a nap 30minutes"
-                app:title="SUCCESS" />
-
-            <com.transferwise.sequencelayout.SequenceStep
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:anchor="20 Dec"
-                app:subtitle="Meditate 10minutes"
-                app:title="SUCCESS" />
-
-            <com.transferwise.sequencelayout.SequenceStep
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:subtitle="Meditate 15minutes"
-                app:title="FAIL" />
-
-            <com.transferwise.sequencelayout.SequenceStep
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:anchor="21 Dec"
-                app:subtitle="Run 10minutes"
-                app:title="SUCCESS" />
-        </com.transferwise.sequencelayout.SequenceLayout>
-
-    </FrameLayout>
+    </ScrollView>
 
 </LinearLayout>

@@ -12,7 +12,20 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="?attr/actionBarSize"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="start|bottom"
+        app:circleColor="@color/signature"
+        app:customBackgroundShape="@drawable/bg_custom"
+        app:darkIcon="true"
+        app:labelVisibilityMode="unlabeled"
+        app:backgroundShape="circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/main_menu_bottom" />
+
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/menu_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +36,6 @@
         app:itemTextColor="@drawable/menu_item_color"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/main_menu_bottom"/>
+        app:menu="@menu/main_menu_bottom"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

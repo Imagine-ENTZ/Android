@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,11 +26,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.menu_frame_layout, fragmentAnalyzing).commitAllowingStateLoss();
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.menu_bottom_navigation);
-        bottomNavigationView.setOnItemSelectedListener(new ItemSelectedListener());
+        BottomNavigationCircles bottomNavigationCircles = findViewById(R.id.menu_bottom_navigation);
+        bottomNavigationCircles.setOnItemSelectedListener(new ItemSelectedListener());
+        //BottomNavigationView bottomNavigationView = findViewById(R.id.menu_bottom_navigation);
+        //bottomNavigationView.setOnItemSelectedListener(new ItemSelectedListener());
     }
 
-    class ItemSelectedListener implements BottomNavigationView.OnItemSelectedListener {
+    class ItemSelectedListener implements BottomNavigationCircles.OnItemSelectedListener {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
             FragmentTransaction transaction = fragmentManager.beginTransaction();

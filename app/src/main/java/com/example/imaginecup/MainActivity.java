@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.menu_frame_layout, fragmentAnalyzing).commitAllowingStateLoss();
+        transaction.replace(R.id.menu_frame_layout, fragmentHome).commit();
 
         BottomNavigationCircles bottomNavigationCircles = findViewById(R.id.menu_bottom_navigation);
         bottomNavigationCircles.setOnItemSelectedListener(new ItemSelectedListener());
@@ -41,21 +41,21 @@ public class MainActivity extends AppCompatActivity {
             switch (menuItem.getItemId()) {
                 case R.id.menu_home:
                     //System.out.println(menuItem);
-                    transaction.replace(R.id.menu_frame_layout, fragmentHome).commitAllowingStateLoss();
+                    transaction.replace(R.id.menu_frame_layout, fragmentHome).commit();
                     //transaction.addToBackStack(null); // 백스택에 추가를 해놔야, fragment 가 교체될 때 삭제되지 않음
                     //transaction.commit();
-                    break;
+                    return true;
                 case R.id.menu_analyzing:
                     //System.out.println(menuItem);
-                    transaction.replace(R.id.menu_frame_layout, fragmentAnalyzing).commitAllowingStateLoss();
-                    break;
+                    transaction.replace(R.id.menu_frame_layout, fragmentAnalyzing).commit();
+                    return true;
                 case R.id.menu_mission:
                     //System.out.println(menuItem);
-                    transaction.replace(R.id.menu_frame_layout, fragmentMission).commitAllowingStateLoss();
-                    break;
+                    transaction.replace(R.id.menu_frame_layout, fragmentMission).commit();
+                    return true;
             }
 
-            return true;
+            return false;
         }
     }
 }

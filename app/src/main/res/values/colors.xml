@@ -9,8 +9,4 @@
     <color name="white">#FFFFFFFF</color>
     <color name="signature">#5968F4</color>
 
-    <!--bottom navigation bar-->
-    <color name="navigation_color_home">#5968F4</color>
-    <color name="navigation_color_analyze">#C9379D</color>
-    <color name="navigation_color_mission">#E6A919</color>
 </resources>

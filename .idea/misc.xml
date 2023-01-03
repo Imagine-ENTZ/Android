@@ -6,7 +6,13 @@
         <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/drawable/analysis_day_button.xml" value="0.3065" />
         <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/drawable/analysis_day_left_button.xml" value="0.3065" />
         <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/drawable/analysis_day_right_button.xml" value="0.3065" />
-        <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/layout/activity_analysis.xml" value="0.3671875" />
+        <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/drawable/calendar_selector.xml" value="0.1" />
+        <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/drawable/transparent_calendar_element.xml" value="0.1" />
+        <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/layout/activity_analysis.xml" value="0.1" />
+        <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/layout/activity_main.xml" value="0.17192982456140352" />
+        <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/layout/calendar_day_layout.xml" value="0.20742753623188406" />
+        <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/layout/calendat_day_layout.xml" value="0.152" />
+        <entry key="..\:/Users/sec/AndroidStudioProjects/ImagineCup/app/src/main/res/layout/item_calendar_day.xml" value="0.1" />
       </map>
     </option>
   </component>

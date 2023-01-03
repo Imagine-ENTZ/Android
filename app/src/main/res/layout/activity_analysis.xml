@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/layout_stress">
+        android:id="@+id/layout_stress"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/textview_user_id"
@@ -63,7 +64,8 @@
         app:layout_constraintTop_toBottomOf="@id/layout_stress"
         android:orientation="horizontal"
         android:weightSum="10"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:visibility="gone">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_day"
@@ -94,7 +96,8 @@
         android:layout_marginTop="20dp"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
-        android:id="@+id/dat_layout">
+        android:id="@+id/dat_layout"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -125,5 +128,14 @@
         </HorizontalScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/CalenderViewCustom"
+        app:mcv_dateTextAppearance="@style/CalenderViewDateCustomText"
+        app:mcv_weekDayTextAppearance="@style/CalenderViewWeekCustomText"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

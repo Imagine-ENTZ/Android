@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles;
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,17 +40,17 @@ public class MainActivity extends AppCompatActivity {
 
             switch (menuItem.getItemId()) {
                 case R.id.menu_home:
-                    System.out.println(menuItem);
+                    //System.out.println(menuItem);
                     transaction.replace(R.id.menu_frame_layout, fragmentHome).commitAllowingStateLoss();
                     //transaction.addToBackStack(null); // 백스택에 추가를 해놔야, fragment 가 교체될 때 삭제되지 않음
                     //transaction.commit();
                     break;
                 case R.id.menu_analyzing:
-                    System.out.println(menuItem);
+                    //System.out.println(menuItem);
                     transaction.replace(R.id.menu_frame_layout, fragmentAnalyzing).commitAllowingStateLoss();
                     break;
                 case R.id.menu_mission:
-                    System.out.println(menuItem);
+                    //System.out.println(menuItem);
                     transaction.replace(R.id.menu_frame_layout, fragmentMission).commitAllowingStateLoss();
                     break;
             }

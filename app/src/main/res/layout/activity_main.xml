@@ -13,6 +13,7 @@
         android:layout_marginBottom="?attr/actionBarSize"/>
 
     <com.github.kwasow.bottomnavigationcircles.BottomNavigationCircles
+        android:id="@+id/menu_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="start|bottom"

@@ -12,13 +12,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.example.imaginecup.MainActivity;
 import com.example.imaginecup.R;
 
 public class MissionFragment extends Fragment implements View.OnClickListener {
+    private MainActivity mainActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        mainActivity = (MainActivity) getActivity();
         View view = inflater.inflate(R.layout.fragment_mission, container, false);
 
         FrameLayout recommendedMissionButton1 = view.findViewById(R.id.mission_box_1);
@@ -45,14 +48,8 @@ public class MissionFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch(view.getId()) {
             case R.id.mission_box_1:
-                // 데이터를 다이얼로그로 보내기
-                Bundle args = new Bundle();
-                args.putString("key", "value");
-
-                MissionDialogFragment dialog = new MissionDialogFragment();
-                dialog.setArguments(args); // 데이터 전달
-                dialog.show(getActivity().getSupportFragmentManager(),"tag");
-
+                MissionDialogFragment missionDialogFragment = MissionDialogFragment.getInstance();
+                missionDialogFragment.show(getFragmentManager(), MissionDialogFragment.TAG_EVENT_DIALOG);
                 break;
 
             case R.id.mission_box_2:

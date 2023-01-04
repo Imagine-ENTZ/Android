@@ -5,9 +5,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_analyzing">Analyzing</string>
     <string name="menu_mission">Mission</string>
-    <string name="dialog_start_mission" />
-    <string name="start" />
-    <string name="cancel" />
+    <string name="dialog_start_mission">Start Mission?</string>
+    <string name="start">START</string>
+    <string name="cancel">CANCEL</string>
     <string-array name="weekdays">
         <item>MON</item>
         <item>TUE</item>

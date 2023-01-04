@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import com.example.imaginecup.R;
 
@@ -25,7 +26,7 @@ public class MissionDialogFragment extends DialogFragment implements View.OnClic
         MissionDialogFragment missionDialogFragment = new MissionDialogFragment();
         return missionDialogFragment;
     }
-
+/*
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -44,34 +45,28 @@ public class MissionDialogFragment extends DialogFragment implements View.OnClic
         return builder.create();
     }
 
-/*
+
+ */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mission_dialog, container, false);
 
-        Bundle args = getArguments();
-        String value = args.getString("key");
-
-        fragment = getActivity().getSupportFragmentManager().findFragmentByTag("tag");
-
-        if (fragment != null) {
-            DialogFragment dialogFragment = (DialogFragment) fragment;
-            dialogFragment.dismiss();
-        }
+        Button startButton = (Button)view.findViewById(R.id.dialog_start_button);
+        Button cancelButton = (Button)view.findViewById(R.id.dialog_cancel_button);
+        startButton.setOnClickListener(this);
+        cancelButton.setOnClickListener(this);
 
         setCancelable(false);
 
         return view;
     }
 
-
- */
     @Override
     public void onClick(View view) {
         dismiss();
     }
-
+/*
     @Override
     public void onResume() {
         super.onResume();
@@ -82,4 +77,6 @@ public class MissionDialogFragment extends DialogFragment implements View.OnClic
         params.height = 1000;
         window.setAttributes(params);
     }
+
+ */
 }

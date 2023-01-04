@@ -16,12 +16,10 @@ import com.example.imaginecup.MainActivity;
 import com.example.imaginecup.R;
 
 public class MissionFragment extends Fragment implements View.OnClickListener {
-    private MainActivity mainActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mainActivity = (MainActivity) getActivity();
         View view = inflater.inflate(R.layout.fragment_mission, container, false);
 
         FrameLayout recommendedMissionButton1 = view.findViewById(R.id.mission_box_1);
@@ -49,9 +47,8 @@ public class MissionFragment extends Fragment implements View.OnClickListener {
         switch(view.getId()) {
             case R.id.mission_box_1:
                 MissionDialogFragment missionDialogFragment = MissionDialogFragment.getInstance();
-                missionDialogFragment.show(getFragmentManager(), MissionDialogFragment.TAG_EVENT_DIALOG);
+                missionDialogFragment.show(getChildFragmentManager(), MissionDialogFragment.TAG_EVENT_DIALOG);
                 break;
-
             case R.id.mission_box_2:
                 break;
             case R.id.mission_button_1:

@@ -3,6 +3,8 @@ package com.example.imaginecup.missionPage;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.DialogFragment;
@@ -66,17 +68,17 @@ public class MissionDialogFragment extends DialogFragment implements View.OnClic
     public void onClick(View view) {
         dismiss();
     }
-/*
+
     @Override
     public void onResume() {
         super.onResume();
         Window window = getDialog().getWindow();
+        super.getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); // 투명 배경
         if(window == null) return;
         WindowManager.LayoutParams params = window.getAttributes();
-        params.width = 1000;
-        params.height = 1000;
+        params.width = 800;
+        params.height = 500;
         window.setAttributes(params);
     }
 
- */
 }

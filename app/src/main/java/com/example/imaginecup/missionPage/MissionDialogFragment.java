@@ -8,10 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 
 import com.example.imaginecup.R;
 
-public class MissionDialogFragment extends DialogFragment {
+public class MissionDialogFragment extends DialogFragment implements View.OnClickListener {
     private Fragment fragment;
 
     @Override
@@ -29,7 +30,13 @@ public class MissionDialogFragment extends DialogFragment {
             dialogFragment.dismiss();
         }
 
+        setCancelable(false);
 
         return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+        dismiss();
     }
 }

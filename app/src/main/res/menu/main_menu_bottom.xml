@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_analyzing"
+        android:icon="@drawable/icon_analyzing"
+        android:enabled="true"
+        android:title="@string/menu_analyzing" />
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/icon_home"
+        android:enabled="true"
+        android:title="@string/menu_home" />
+    <item
+        android:id="@+id/menu_mission"
+        android:icon="@drawable/icon_mission"
+        android:enabled="true"
+        android:title="@string/menu_mission" />
+
+</menu>

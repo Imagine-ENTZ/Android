@@ -208,7 +208,7 @@
                     <com.transferwise.sequencelayout.SequenceStep
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:anchor="21 Dec"
+                        app:anchor="19 Dec"
                         app:subtitle="Run 10minutes"
                         app:title="SUCCESS" />
                 </com.transferwise.sequencelayout.SequenceLayout>

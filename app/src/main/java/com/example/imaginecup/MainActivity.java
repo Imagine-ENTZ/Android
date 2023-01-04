@@ -1,6 +1,7 @@
 package com.example.imaginecup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager = getSupportFragmentManager();
     private HomeFragment fragmentHome = new HomeFragment();
     private MissionFragment fragmentMission = new MissionFragment();
-    private AnalyzingFragment fragmentAnalyzing = new AnalyzingFragment();
+    private AnalysisFragment fragmentAnalyzing = new AnalysisFragment();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                     //transaction.commit();
                     return true;
                 case R.id.menu_analyzing:
-                    //System.out.println(menuItem);
                     transaction.replace(R.id.menu_frame_layout, fragmentAnalyzing).commit();
                     return true;
                 case R.id.menu_mission:

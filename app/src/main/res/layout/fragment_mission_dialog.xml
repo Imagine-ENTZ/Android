@@ -3,35 +3,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@drawable/dialog_corner_round"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".missionPage.MissionDialogFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:padding="30dp"
-        android:textSize="20sp"
         android:text="Start Mission!"
-        android:fontFamily="@font/poppins_medium"/>
+        android:textSize="20sp" />
 
     <LinearLayout
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginBottom="0dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="0dp"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/dialog_cancel_button"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_weight=".5"
+            android:background="@drawable/corner_round"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center"
             android:text="CANCEL"
-            android:textSize="16dp"
-            android:fontFamily="@font/poppins_medium"
-            android:background="@drawable/corner_round"/>
+            android:textSize="16dp" />
+
         <View
             android:layout_width="3dp"
             android:layout_height="match_parent"
@@ -43,10 +45,10 @@
             android:layout_height="40dp"
             android:layout_weight=".5"
             android:background="@drawable/corner_round"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center"
             android:text="START"
-            android:textSize="16dp"
-            android:fontFamily="@font/poppins_medium"/>
+            android:textSize="16dp" />
     </LinearLayout>
 
 </LinearLayout>

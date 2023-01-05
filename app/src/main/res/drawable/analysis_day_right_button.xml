@@ -20,7 +20,7 @@
                 android:topRightRadius="250dp"
                 android:bottomRightRadius="250dp"/>
             <solid
-                android:color="@color/white"/>
+                android:color="#ffffff"/>
         </shape>
     </item>
 

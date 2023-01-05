@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.ImagineCup" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="windowNoTitle">true</item>
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/signature</item>
         <item name="colorPrimaryVariant">@color/signature</item>
@@ -10,7 +11,8 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -24,7 +26,7 @@
         <item name="android:dateTextAppearance">@style/TextAppearance.AppCompat.Medium</item>
     </style>
 
-    <!-- 달력에 사용하는 스타일 -->
+    <!-- 달력 -->
     <style name="CustomTextAppearance" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/mcv_text_date_light</item>
@@ -32,7 +34,7 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
-    <!-- 여기서 요일, 달력 안 숫자들의 폰트 설정을 수행할 수 있다 -->
+    <!-- 여기서 요일, 달력 안 숫자들의 폰트 설정 -->
     <style name="CalenderViewCustom" parent="Theme.AppCompat">
         <item name="colorAccent">@android:color/holo_red_light</item>
         <item name="colorPrimary">@android:color/holo_blue_light</item>
@@ -55,5 +57,6 @@
     <style name="CalendarWidgetHeader">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:foreground">#2D2387</item>
     </style>
 </resources>

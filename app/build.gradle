@@ -45,5 +45,8 @@ dependencies {
     implementation 'com.github.transferwise:sequence-layout:1.0.7'
 
     implementation 'com.github.Kwasow:BottomNavigationCircles-Android:1.2'
+    implementation 'com.github.vipulasri:timelineview:1.1.5'
+
+    implementation 'com.github.qapqap:TimelineView:v1.6'
 
 }

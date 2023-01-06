@@ -9,11 +9,20 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import com.example.imaginecup.MainActivity;
 import com.example.imaginecup.R;
+
+import org.qap.ctimelineview.TimelineRow;
+import org.qap.ctimelineview.TimelineViewAdapter;
+
+import java.util.ArrayList;
 
 public class MissionFragment extends Fragment implements View.OnClickListener {
 
@@ -30,6 +39,57 @@ public class MissionFragment extends Fragment implements View.OnClickListener {
         Button missionButton4 = view.findViewById(R.id.mission_button_4);
         Button missionButton5 = view.findViewById(R.id.mission_button_5);
 
+        ArrayList<TimelineRow> timelineRowsList = new ArrayList<>();
+        LatestMissionListAdapter latestMissionListAdapter = new LatestMissionListAdapter(this.getContext(), 0, timelineRowsList, true);
+        // Add Random Rows to the List
+        for (int i = 0; i < 15; i++) {
+            //add the new row to the list
+            timelineRowsList.add(latestMissionListAdapter.createRandomTimelineRow(i));
+        }
+
+
+        //Get the ListView and Bind it with the Timeline Adapter
+        ListView listView = (ListView) view.findViewById(R.id.timeline_listView);
+        listView.setAdapter(latestMissionListAdapter);
+
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            private int currentVisibleItemCount;
+            private int currentScrollState;
+            private int currentFirstVisibleItem;
+            private int totalItem;
+            private LinearLayout lBelow;
+
+
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                this.currentScrollState = scrollState;
+                this.isScrollCompleted();
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem,
+                                 int visibleItemCount, int totalItemCount) {
+                this.currentFirstVisibleItem = firstVisibleItem;
+                this.currentVisibleItemCount = visibleItemCount;
+                this.totalItem = totalItemCount;
+
+
+            }
+
+            private void isScrollCompleted() {
+                if (totalItem - currentFirstVisibleItem == currentVisibleItemCount
+                        && this.currentScrollState == SCROLL_STATE_IDLE) {
+
+                    ////on scrolling to end of the list, add new rows
+                    for (int i = 0; i < 15; i++) {
+                        latestMissionListAdapter.add(latestMissionListAdapter.createRandomTimelineRow(i));
+                    }
+
+                }
+            }
+
+
+        });
 
         recommendedMissionButton1.setOnClickListener(this);
         recommendedMissionButton2.setOnClickListener(this);

@@ -8,6 +8,7 @@
     <string name="dialog_start_mission">Start Mission?</string>
     <string name="start">START</string>
     <string name="cancel">CANCEL</string>
+    <string name="AND" />
     <string-array name="weekdays">
         <item>MON</item>
         <item>TUE</item>

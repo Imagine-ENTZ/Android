@@ -22,23 +22,24 @@ import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class LatestMissionListAdapter extends ArrayAdapter<TimelineRow> {
-    Context context;
-    int id;
-    ArrayList<TimelineRow> data;
-    Boolean isSort;
+    private Context context;
+    private Resources res;
+    private List<TimelineRow> RowDataList;
+    private String AND;
 
-    public LatestMissionListAdapter(@NonNull Context context, int id, ArrayList<TimelineRow> data, Boolean isSort) {
-        super(context, id);
-        this.id = id;
-        this.data = data;
-        this.isSort = isSort;
+
+    public LatestMissionListAdapter(Context context, int resource, ArrayList<TimelineRow> objects, Boolean isSort) {
+        super(context, resource, objects);
+        this.context = context;
     }
+
 
     public TimelineRow createRandomTimelineRow(int id) {
 
@@ -52,7 +53,7 @@ public class LatestMissionListAdapter extends ArrayAdapter<TimelineRow> {
         //to set the row Description (optional)
         myRow.setDescription("Description " + id);
         //to set the row bitmap image (optional)
-        //myRow.setImage(BitmapFactory.decodeResource(getResources, R.drawable.calendar_icon + getRandomNumber(0, 10)));
+        //myRow.setImage(BitmapFactory.decodeResource(context.getResources(), R.drawable.calendar_icon + getRandomNumber(0, 10)));
         //to set row Below Line Color (optional)
         myRow.setBellowLineColor(getRandomColor());
         //to set row Below Line Size in dp (optional)

@@ -172,21 +172,18 @@
 
                 <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/mission_corner_layout">
+                    android:layout_height="410dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/mission_corner_layout"
+                    android:fillViewport="true">
 
-
-                    <LinearLayout
+                    <ListView
+                        android:id="@+id/timeline_listView"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <ListView
-                            android:id="@+id/timeline_listView"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:divider="@null"
-                            android:dividerHeight="0dp" />
-                    </LinearLayout>
+                        android:layout_height="match_parent"
+                        android:divider="@null"
+                        android:dividerHeight="0dp" />
+
                 </ScrollView>
 
 

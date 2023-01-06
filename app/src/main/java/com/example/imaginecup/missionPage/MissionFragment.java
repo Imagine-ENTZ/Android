@@ -1,5 +1,7 @@
 package com.example.imaginecup.missionPage;
 
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,9 +24,16 @@ import com.example.imaginecup.R;
 import org.qap.ctimelineview.TimelineRow;
 import org.qap.ctimelineview.TimelineViewAdapter;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MissionFragment extends Fragment implements View.OnClickListener {
+    ArrayList<TimelineRow> timelineRowsList = new ArrayList<>();
+    ArrayAdapter<TimelineRow> latestMissionListAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,13 +48,15 @@ public class MissionFragment extends Fragment implements View.OnClickListener {
         Button missionButton4 = view.findViewById(R.id.mission_button_4);
         Button missionButton5 = view.findViewById(R.id.mission_button_5);
 
-        ArrayList<TimelineRow> timelineRowsList = new ArrayList<>();
-        LatestMissionListAdapter latestMissionListAdapter = new LatestMissionListAdapter(this.getContext(), 0, timelineRowsList, true);
-        // Add Random Rows to the List
         for (int i = 0; i < 15; i++) {
             //add the new row to the list
-            timelineRowsList.add(latestMissionListAdapter.createRandomTimelineRow(i));
+            timelineRowsList.add(createRandomTimelineRow(i));
         }
+
+        latestMissionListAdapter = new TimelineViewAdapter(view.getContext(),0, timelineRowsList, true);
+        System.out.println(view.getContext() + "hi!");
+        // Add Random Rows to the List
+
 
 
         //Get the ListView and Bind it with the Timeline Adapter
@@ -82,7 +93,7 @@ public class MissionFragment extends Fragment implements View.OnClickListener {
 
                     ////on scrolling to end of the list, add new rows
                     for (int i = 0; i < 15; i++) {
-                        latestMissionListAdapter.add(latestMissionListAdapter.createRandomTimelineRow(i));
+                        latestMissionListAdapter.add(createRandomTimelineRow(i));
                     }
 
                 }
@@ -123,4 +134,65 @@ public class MissionFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+    public TimelineRow createRandomTimelineRow(int id) {
+
+        // Create new timeline row (pass your Id)
+        TimelineRow myRow = new TimelineRow(id);
+
+        //to set the row Date (optional)
+        myRow.setDate(getRandomDate());
+        //to set the row Title (optional)
+        myRow.setTitle("Title " + id);
+        //to set the row Description (optional)
+        myRow.setDescription("Description " + id);
+        //to set the row bitmap image (optional)
+        myRow.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.calendar_icon + getRandomNumber(0, 10)));
+        //to set row Below Line Color (optional)
+        myRow.setBellowLineColor(getRandomColor());
+        //to set row Below Line Size in dp (optional)
+        myRow.setBellowLineSize(getRandomNumber(2, 25));
+        //to set row Image Size in dp (optional)
+        myRow.setImageSize(getRandomNumber(25, 40));
+        //to set background color of the row image (optional)
+        myRow.setBackgroundColor(getRandomColor());
+        //to set the Background Size of the row image in dp (optional)
+        myRow.setBackgroundSize(getRandomNumber(25, 40));
+        //to set row Date text color (optional)
+        myRow.setDateColor(getRandomColor());
+        //to set row Title text color (optional)
+        myRow.setTitleColor(getRandomColor());
+        //to set row Description text color (optional)
+        myRow.setDescriptionColor(getRandomColor());
+
+        return myRow;
+    }
+
+    //Random Methods
+    public int getRandomColor() {
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        ;
+        return color;
+    }
+
+    public int getRandomNumber(int min, int max) {
+        return min + (int) (Math.random() * max);
+    }
+
+
+    public Date getRandomDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Date startDate = null;
+        Date endDate = new Date();
+        try {
+            startDate = sdf.parse("02/09/2015");
+            long random = ThreadLocalRandom.current().nextLong(startDate.getTime(), endDate.getTime());
+            endDate = new Date(random);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return endDate;
+    }
+
 }

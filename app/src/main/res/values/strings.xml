@@ -33,4 +33,10 @@
         <item>November</item>
         <item>December</item>
     </string-array>
+    <plurals name="years">years</plurals>
+    <plurals name="months">months</plurals>
+    <plurals name="days">days</plurals>
+    <plurals name="hours">hours</plurals>
+    <plurals name="minutes">minutes</plurals>
+    <plurals name="seconds">seconds</plurals>
 </resources>

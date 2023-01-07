@@ -21,7 +21,6 @@ import android.widget.ListView;
 import com.example.imaginecup.MainActivity;
 import com.example.imaginecup.R;
 
-import org.qap.ctimelineview.TimelineRow;
 import org.qap.ctimelineview.TimelineViewAdapter;
 
 import java.text.ParseException;
@@ -32,8 +31,8 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class MissionFragment extends Fragment implements View.OnClickListener {
-    ArrayList<TimelineRow> timelineRowsList = new ArrayList<>();
-    ArrayAdapter<TimelineRow> latestMissionListAdapter;
+    ArrayList<com.example.imaginecup.missionPage.TimelineRow> timelineRowsList = new ArrayList<>();
+    ArrayAdapter<com.example.imaginecup.missionPage.TimelineRow> latestMissionListAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,8 +52,7 @@ public class MissionFragment extends Fragment implements View.OnClickListener {
             timelineRowsList.add(createRandomTimelineRow(i));
         }
 
-        latestMissionListAdapter = new TimelineViewAdapter(view.getContext(),0, timelineRowsList, true);
-        System.out.println(view.getContext() + "hi!");
+        latestMissionListAdapter = new TimelineViewAdapter2(view.getContext(),0, timelineRowsList, true);
         // Add Random Rows to the List
 
 
@@ -135,64 +133,77 @@ public class MissionFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public TimelineRow createRandomTimelineRow(int id) {
+    ///// 어댑터 분리 못함
+
+    public com.example.imaginecup.missionPage.TimelineRow createRandomTimelineRow(int id) {
 
         // Create new timeline row (pass your Id)
-        TimelineRow myRow = new TimelineRow(id);
+        com.example.imaginecup.missionPage.TimelineRow myRow = new TimelineRow(id);
 
-        //to set the row Date (optional)
+        //to set the row Date (optional) 시간대 기록
         myRow.setDate(getRandomDate());
-        //to set the row Title (optional)
+        //to set the row Title (optional) 한 일 기록
         myRow.setTitle("Title " + id);
-        //to set the row Description (optional)
+        //to set the row Description (optional) 설명.. 뭘 했나요 ?
         myRow.setDescription("Description " + id);
-        //to set the row bitmap image (optional)
+        //to set the row bitmap image (optional) 이미지 (동그라미에 들어갈 이미지)
         myRow.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.calendar_icon + getRandomNumber(0, 10)));
-        //to set row Below Line Color (optional)
-        myRow.setBellowLineColor(getRandomColor());
-        //to set row Below Line Size in dp (optional)
-        myRow.setBellowLineSize(getRandomNumber(2, 25));
-        //to set row Image Size in dp (optional)
-        myRow.setImageSize(getRandomNumber(25, 40));
-        //to set background color of the row image (optional)
-        myRow.setBackgroundColor(getRandomColor());
-        //to set the Background Size of the row image in dp (optional)
-        myRow.setBackgroundSize(getRandomNumber(25, 40));
+        //to set row Below Line Color (optional) 줄 색깔
+        myRow.setBellowLineColor(getColor(89, 104, 244));
+        //to set row Below Line Size in dp (optional) 줄 사이즈 (두께)
+        myRow.setBellowLineSize(getRandomNumber(3, 3));
+        //to set row Image Size in dp (optional) 이미지 사이즈
+        myRow.setImageSize(getRandomNumber(25, 25));
+        //to set background color of the row image (optional) 이미지 배경 색깔 (동그라미 색이라고 보자)
+        myRow.setBackgroundColor(getColor(89, 104, 244));
+        //to set the Background Size of the row image in dp (optional) (배경 사이즈)
+        myRow.setBackgroundSize(getRandomNumber(15, 15));
         //to set row Date text color (optional)
-        myRow.setDateColor(getRandomColor());
+        myRow.setDateColor(getColor(192, 192, 192));
         //to set row Title text color (optional)
-        myRow.setTitleColor(getRandomColor());
+        myRow.setTitleColor(getColor(0, 0, 0));
         //to set row Description text color (optional)
-        myRow.setDescriptionColor(getRandomColor());
+        myRow.setDescriptionColor(getColor(0, 0, 0));
 
         return myRow;
     }
 
-    //Random Methods
-    public int getRandomColor() {
-        Random rnd = new Random();
-        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
-        ;
+    // 색상 얻기
+    public int getColor(int red, int green, int blue) {
+        // signature (89, 104, 244)
+        // silver (192, 192, 192)
+        // black (0, 0, 0)
+        int color = Color.rgb(red, green, blue);
+
         return color;
     }
 
+    // 랜덤 넘버 아님. 그냥 크기 설정
     public int getRandomNumber(int min, int max) {
-        return min + (int) (Math.random() * max);
+        return min + max;
     }
 
 
-    public Date getRandomDate() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    public String getRandomDate() {
+        long now = System.currentTimeMillis();
+        Date today = new Date(now);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        String todayString = simpleDateFormat.format(today);
         Date startDate = null;
-        Date endDate = new Date();
+        Date date;
+
         try {
-            startDate = sdf.parse("02/09/2015");
-            long random = ThreadLocalRandom.current().nextLong(startDate.getTime(), endDate.getTime());
-            endDate = new Date(random);
+            startDate = simpleDateFormat.parse(todayString);
+            today = startDate;
+            System.out.println(todayString);
+            System.out.println(today);
+            System.out.println("hello!!");
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return endDate;
+
+
+        return todayString;
     }
 
 }

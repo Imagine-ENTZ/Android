@@ -1,4 +1,4 @@
-package com.example.imaginecup;
+package com.example.imaginecup.analysis;
 
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;

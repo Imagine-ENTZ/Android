@@ -1,32 +1,34 @@
-package com.example.imaginecup;
+package com.example.imaginecup.analysis;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.imaginecup.R;
 import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.ValueFormatter;
-import com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Calendar;
+
+import devs.mulham.horizontalcalendar.HorizontalCalendar;
+import devs.mulham.horizontalcalendar.HorizontalCalendarView;
+import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
+
 
 public class AnalysisFragment extends Fragment {
 
@@ -34,6 +36,7 @@ public class AnalysisFragment extends Fragment {
     private ImageView ivCalender;
     private BarChart chartAngerLevel;
     private CalendarDialog calendarDialog;
+    private HorizontalCalendarView horizontalCalendarView;
 
     @Nullable
     @Override
@@ -43,6 +46,8 @@ public class AnalysisFragment extends Fragment {
         context = container.getContext();
 
         ivCalender = view.findViewById(R.id.imageview_calendar);
+        chartAngerLevel = view.findViewById(R.id.chart_stress_index);
+        horizontalCalendarView = view.findViewById(R.id.horizontal_calendar);
 
         ivCalender.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,9 +57,10 @@ public class AnalysisFragment extends Fragment {
             }
         });
 
-        chartAngerLevel = view.findViewById(R.id.chart_stress_index);
-        initChart();
+        initChart();      //bar chart
         setChartData();
+
+        initHorizontalCalendar(view);   //horizontal calendar
 
         return view;
     }
@@ -134,6 +140,33 @@ public class AnalysisFragment extends Fragment {
         barData.setBarWidth(0.5f);   //그래프 너비
 
         chartAngerLevel.setData(barData);
+    }
+
+    private void initHorizontalCalendar(View view){
+        Calendar startDate = Calendar.getInstance();
+        startDate.add(Calendar.MONTH, -1);           //시작 날짜
+
+        Calendar endDate = Calendar.getInstance();
+        endDate.add(Calendar.MONTH, 1);             //종료 날짜
+
+        HorizontalCalendar horizontalCalendar = new HorizontalCalendar.Builder(view, horizontalCalendarView.getId())
+                .range(startDate, endDate)
+                .datesNumberOnScreen(5)
+                .build();
+
+        horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
+            @Override
+            public void onDateSelected(Calendar date, int position) {
+                int year, month, day;
+
+                year = date.get(Calendar.YEAR);
+                month = date.get(Calendar.MONTH);
+                day = date.get(Calendar.DATE);
+
+                Log.v("선택 날짜 : ", year + "년 " + month + "월 " + day + "일");
+            }
+        });
+
     }
 
 }
